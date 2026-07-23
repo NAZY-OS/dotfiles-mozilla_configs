@@ -1,0 +1,145 @@
+{
+  "preferences": {
+    "automaticMode": {
+      "active": true,
+      "newTab": "created"
+    },
+    "notifications": true,
+    "container": {
+      "namePrefix": "//+",
+      "color": "toolbar",
+      "colorRandom": true,
+      "colorRandomExcluded": [],
+      "icon": "fingerprint",
+      "iconRandom": false,
+      "iconRandomExcluded": [],
+      "numberMode": "reuse",
+      "removal": "900000"
+    },
+    "iconColor": "default",
+    "isolation": {
+      "reactivateDelay": 0,
+      "global": {
+        "navigation": {
+          "action": "notsamedomainexact"
+        },
+        "mouseClick": {
+          "middle": {
+            "action": "notsamedomain",
+            "container": "default"
+          },
+          "ctrlleft": {
+            "action": "notsamedomain",
+            "container": "default"
+          },
+          "left": {
+            "action": "never",
+            "container": "default"
+          }
+        },
+        "excluded": [
+          "github.com"
+        ],
+        "excludedContainers": []
+      },
+      "domain": [
+        {
+          "pattern": "*.youtube.com",
+          "always": {
+            "action": "enabled",
+            "allowedInPermanent": false,
+            "allowedInTemporary": false
+          },
+          "navigation": {
+            "action": "notsamedomain"
+          },
+          "mouseClick": {
+            "middle": {
+              "action": "always",
+              "container": "default"
+            },
+            "ctrlleft": {
+              "action": "always",
+              "container": "default"
+            },
+            "left": {
+              "action": "notsamedomain",
+              "container": "default"
+            }
+          },
+          "excluded": [],
+          "excludedContainers": []
+        }
+      ],
+      "mac": {
+        "action": "disabled"
+      }
+    },
+    "browserActionPopup": true,
+    "pageAction": true,
+    "contextMenu": true,
+    "contextMenuBookmarks": false,
+    "replaceTabs": true,
+    "closeRedirectorTabs": {
+      "active": false,
+      "delay": 2000,
+      "domains": [
+        "t.co",
+        "outgoing.prod.mozaws.net",
+        "slack-redir.net",
+        "away.vk.com"
+      ]
+    },
+    "ignoreRequests": [
+      "getpocket.com",
+      "addons.mozilla.org"
+    ],
+    "cookies": {
+      "domain": {}
+    },
+    "scripts": {
+      "active": false,
+      "domain": {
+        "*.*": [
+          {
+            "code": "// Function to enable scrolling\nfunction enableScrolling() {\n    // Allow vertical scrolling\n    document.body.style.overflowY = 'scroll';\n\n    // Remove event listener for upward scrolling\n    window.addEventListener('scroll', function(e) {\n        if (window.scrollY < previousScrollY) {\n            e.preventDefault();\n        }\n    });\n\n    let previousScrollY = window.scrollY;\n\n    // Monitor scroll events and save previous position\n    window.addEventListener('scroll', function() {\n        previousScrollY = window.scrollY;\n    });\n}\n\n// Function to start the scroll script\nfunction startScrollScript() {\n    enableScrolling();\n    setTimeout(() => {\n        // Repeat every 2 seconds\n        setInterval(enableScrolling, 2000);\n    }, 700);\n}\n\n// Start the script\nstartScrollScript();",
+            "runAt": "document_idle"
+          }
+        ]
+      }
+    },
+    "deletesHistory": {
+      "active": false,
+      "automaticMode": "never",
+      "contextMenu": false,
+      "contextMenuBookmarks": false,
+      "containerAlwaysPerDomain": "never",
+      "containerIsolation": "never",
+      "containerRemoval": 0,
+      "containerMouseClicks": "never",
+      "statistics": false
+    },
+    "statistics": false,
+    "ui": {
+      "expandPreferences": false,
+      "popupDefaultTab": "statistics"
+    },
+    "containerPrefixOverride": "",
+    "proxies": {
+      "active": false,
+      "assignmentMode": "random",
+      "entries": []
+    }
+  },
+  "statistics": {
+    "startTime": "2026-07-20T23:37:59.249Z",
+    "containersDeleted": 0,
+    "cookiesDeleted": 0,
+    "cacheDeleted": 0,
+    "deletesHistory": {
+      "containersDeleted": 0,
+      "cookiesDeleted": 0,
+      "urlsDeleted": 0
+    }
+  }
+}
